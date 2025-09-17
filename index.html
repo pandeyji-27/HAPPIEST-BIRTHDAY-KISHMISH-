@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Kishmish 🎂</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      overflow: hidden;
+    }
+    h1 {
+      font-size: 3em;
+      color: #fff;
+      text-shadow: 2px 2px 4px #333;
+      animation: pop 1s ease-in-out;
+    }
+    h2 {
+      font-size: 2em;
+      margin-top: 10px;
+      color: #fff;
+      text-shadow: 1px 1px 3px #333;
+      animation: fadeIn 2s ease-in-out;
+    }
+    @keyframes pop {
+      0% { transform: scale(0); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    .balloon {
+      position: absolute;
+      bottom: -150px;
+      width: 50px;
+      height: 70px;
+      background: red;
+      border-radius: 50% 50% 50% 50%;
+      animation: float 6s ease-in-out infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0); }
+      50% { transform: translateY(-500px) rotate(15deg); }
+      100% { transform: translateY(-1000px) rotate(-15deg); }
+    }
+  </style>
+</head>
+<body>
+  <h1>Happy Birthday Kishmish 🎉</h1>
+  <h2>– from your dost, Pandey 😎</h2>
+
+  <script>
+    function createBalloon() {
+      const colors = ["#ff4d6d", "#ffd60a", "#4cc9f0", "#ff9f1c", "#06d6a0"];
+      const balloon = document.createElement("div");
+      balloon.className = "balloon";
+      balloon.style.left = Math.random() * window.innerWidth + "px";
+      balloon.style.background = colors[Math.floor(Math.random() * colors.length)];
+      balloon.style.animationDuration = 5 + Math.random() * 3 + "s";
+      document.body.appendChild(balloon);
+      setTimeout(() => balloon.remove(), 8000);
+    }
+    setInterval(createBalloon, 500);
+  </script>
+</body>
+</html>
